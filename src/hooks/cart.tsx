@@ -1,0 +1,71 @@
+import React, { useCallback, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { ApplicationState } from '../redux';
+import * as actions from '../redux/ducks/cart/actions';
+import { Cart } from '../redux/ducks/cart/types';
+
+function useCart() {
+  const dispatch = useDispatch();
+  const cart = useSelector((state: ApplicationState) => state.cart.cart);
+
+  const cleanCart = useCallback(() => {
+    dispatch(actions.removeCart());
+  }, []);
+
+  const increment = useCallback(
+    (id: number) => {
+      const newcart = cart.map((product) =>
+        product.id === id
+          ? { ...product, quantity: product.quantity + 1 }
+          : product,
+      );
+
+      dispatch(actions.increment(newcart));
+    },
+    [cart],
+  );
+
+  const addToCart = useCallback(
+    (product: Cart) => {
+      const existsInCart = cart.find((p) => p.id === product.id);
+
+      if (existsInCart) {
+        return;
+      } else {
+        dispatch(actions.addToCart({ ...product, quantity: 1 }));
+      }
+    },
+    [cart],
+  );
+
+  const decrement = useCallback(
+    (id: number) => {
+      const check = cart.filter((prod) => prod.id === id);
+      let list;
+      if (check[0].quantity < 2) {
+        list = cart.filter((prod) => prod.id !== id);
+      } else {
+        list = cart.map((p) =>
+          p.id !== id ? p : { ...p, quantity: p.quantity - 1 },
+        );
+      }
+
+      dispatch(actions.decrement(list));
+    },
+    [cart],
+  );
+
+  const values = useMemo(
+    () => ({
+      addToCart,
+      increment,
+      decrement,
+      cleanCart,
+    }),
+    [addToCart, increment, decrement, cleanCart],
+  );
+
+  return values;
+}
+
+export default useCart;

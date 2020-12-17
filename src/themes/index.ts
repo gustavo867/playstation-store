@@ -3,7 +3,7 @@ export const darkTheme = {
   primary: '#21262E',
   text_color: '#FFF',
   status_bar_color: 'light-content',
-  switch_mode: '#13131A',
+  switch_mode: '#181818',
   product_color: '#FFF',
 };
 

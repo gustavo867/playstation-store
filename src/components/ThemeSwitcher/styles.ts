@@ -1,3 +1,4 @@
+import { StatusBar } from 'react-native';
 import styled from 'styled-components/native';
 import { ThemeProps } from '../../themes/theme.types';
 
@@ -5,7 +6,7 @@ export const Container = styled.View`
   position: absolute;
   height: 54px;
   width: 54px;
-  top: 40px;
+  top: ${StatusBar.currentHeight ? StatusBar.currentHeight + 10 : 50}px;
   right: 7px;
 `;
 
@@ -19,5 +20,5 @@ export const Button = styled.TouchableOpacity`
   justify-content: center;
   box-shadow: 5px 5px 5px black;
   elevation: 5;
-  z-index: 10;
+  z-index: 100;
 `;

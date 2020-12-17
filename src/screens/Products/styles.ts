@@ -20,3 +20,14 @@ export const List = styled.FlatList.attrs({
 })`
   padding-horizontal: 5px;
 `;
+
+export const ErrorContainer = styled.View`
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Error = styled.Text`
+  color: red;
+  font-size: 16px;
+`;

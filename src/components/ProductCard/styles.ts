@@ -21,7 +21,7 @@ export const ProductImage = styled.Image`
 `;
 
 export const ProductCategory = styled.Text`
-  margin-top: 20px;
+  margin-top: 10px;
   color: ${(props: ThemeProps) => props.theme.primary};
   font-size: 10px;
   font-weight: 500;
@@ -44,7 +44,7 @@ export const RowBetween = styled.View`
   justify-content: space-between;
   padding-horizontal: 15px;
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: 8px;
 `;
 
 export const ProductButton = styled.TouchableOpacity``;

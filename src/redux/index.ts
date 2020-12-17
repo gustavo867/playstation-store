@@ -6,10 +6,12 @@ import { ThemeState } from './ducks/theme/types';
 
 import rootReducer from './ducks/rootReducer';
 import rootSaga from './ducks/rootSaga';
+import { CartState } from './ducks/cart/types';
 
 export interface ApplicationState {
   products: ProductsState;
   theme: ThemeState;
+  cart: CartState;
 }
 
 const sagaMiddleware = createSagaMiddleware();
