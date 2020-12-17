@@ -1,15 +1,14 @@
 import React from 'react';
 import { ActivityIndicator, StatusBar } from 'react-native';
-import { Provider, useSelector } from 'react-redux';
+
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
-import { store, persistor, ApplicationState } from './redux/index';
+import { store, persistor } from './redux/index';
+
 import Routes from './routes/routes';
+import ThemeSwitcher from './components/ThemeSwitcher';
 
 const App: React.FC = () => {
-  const barStyle = useSelector(
-    (state: ApplicationState) => state.theme.theme.status_bar_color,
-  );
-
   return (
     <Provider store={store}>
       <PersistGate
@@ -18,9 +17,10 @@ const App: React.FC = () => {
         <StatusBar
           translucent
           backgroundColor="transparent"
-          barStyle={barStyle}
+          barStyle="default"
         />
         <Routes />
+        <ThemeSwitcher />
       </PersistGate>
     </Provider>
   );

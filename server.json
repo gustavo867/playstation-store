@@ -11,22 +11,36 @@
       "id": 2,
       "product_name": "Playstation 5 Digital Edition",
       "category": "Game console",
-      "url": "https://imgur.com/ngm40pU",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-digital-edition-with-dualsense-front-product-shot-01-ps5-en-30jul20?$1600px--t$",
       "price": 500
     },
     {
       "id": 3,
       "product_name": "DualSense",
       "category": "Gaming Controller",
-      "url": "https://i.imgur.com/ALq6dt8.jpeg",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/dualsense-image-block-01-ps5-en-23jul20?$1600px--t$",
       "price": 250
     },
     {
       "id": 4,
       "product_name": "Wireless Headset",
       "category": "Audio and Communication",
-      "url": "https://imgur.com/VWfCzes",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-wireless-headset-image-block-01-en-13jun20?$1600px--t$",
       "price": 280
+    },
+    {
+      "id": 5,
+      "product_name": "Media remote",
+      "category": "Media",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/media-remote-image-block-ps5-02-en-16sep20?$1600px--t$",
+      "price": 180
+    },
+    {
+      "id": 6,
+      "product_name": "Camera",
+      "category": "Media",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/ps5-camera-image-block-01-en-13jun20?$1600px--t$",
+      "price": 200
     }
   ]
 }
