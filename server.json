@@ -1,0 +1,32 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "product_name": "Playstation 5",
+      "category": "Game console",
+      "url": "https://gmedia.playstation.com/is/image/SIEPDC/playstation-5-with-dualsense-front-product-shot-01-ps5-en-30jul20?$native--t$",
+      "price": 600
+    },
+    {
+      "id": 2,
+      "product_name": "Playstation 5 Digital Edition",
+      "category": "Game console",
+      "url": "https://imgur.com/ngm40pU",
+      "price": 500
+    },
+    {
+      "id": 3,
+      "product_name": "DualSense",
+      "category": "Gaming Controller",
+      "url": "https://i.imgur.com/ALq6dt8.jpeg",
+      "price": 250
+    },
+    {
+      "id": 4,
+      "product_name": "Wireless Headset",
+      "category": "Audio and Communication",
+      "url": "https://imgur.com/VWfCzes",
+      "price": 280
+    }
+  ]
+}
