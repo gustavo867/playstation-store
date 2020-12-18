@@ -1,4 +1,5 @@
 import React, { useCallback, useMemo } from 'react';
+import { Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationState } from '../redux';
 import * as actions from '../redux/ducks/cart/actions';
@@ -27,10 +28,15 @@ function useCart() {
 
   const addToCart = useCallback(
     (product: Cart) => {
-      const existsInCart = cart.find((p) => p.id === product.id);
+      if (cart.length >= 1) {
+        const existsInCart = cart.find((p) => p.id === product.id);
 
-      if (existsInCart) {
-        return;
+        if (existsInCart) {
+          Alert.alert(`${product.product_name} is already in the cart`);
+          return;
+        } else {
+          dispatch(actions.addToCart({ ...product, quantity: 1 }));
+        }
       } else {
         dispatch(actions.addToCart({ ...product, quantity: 1 }));
       }

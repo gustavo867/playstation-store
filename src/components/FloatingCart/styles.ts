@@ -28,12 +28,26 @@ export const CartText = styled.Text`
   margin-left: 10px;
 `;
 
-export const CartPricing = styled.View`
-  padding: 20px;
-`;
+export const CartPricing = styled.View``;
 
 export const CartTotalPrice = styled.Text`
   font-size: 16px;
   color: #fff;
   font-weight: bold;
+`;
+
+export const Row = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const ActionButton = styled.TouchableOpacity`
+  height: 40px;
+  width: 40px;
+  border-radius: 12px;
+  background-color: #e83f5b;
+  align-items: center;
+  justify-content: center;
+  margin-right: -10px;
+  margin-left: 10px;
 `;

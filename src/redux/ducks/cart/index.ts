@@ -9,9 +9,13 @@ const cartReducer: Reducer<CartState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case CartTypes.ADD_TO_CART:
       return {
-        cart: action.payload,
+        cart: [...state.cart, action.payload],
       };
     case CartTypes.INCREASE_PRODUCT:
+      return {
+        cart: action.payload,
+      };
+    case CartTypes.DECREMENT_PRODUCT:
       return {
         cart: action.payload,
       };
