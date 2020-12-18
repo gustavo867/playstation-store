@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Product } from '../../redux/ducks/products/types';
+import { ApplicationState } from '../../redux';
+import { useSelector } from 'react-redux';
 
 import FeatherIcon from 'react-native-vector-icons/Feather';
-import * as S from './styles';
 import useCart from '../../hooks/cart';
+import * as S from './styles';
 
 interface ProductProps {
   product: Product;
 }
 
 const ProductCard: React.FC<ProductProps> = ({ product }) => {
-  const { addToCart } = useCart();
+  const { addToCart, isAlreadyInTheCart } = useCart();
+  const cart = useSelector((state: ApplicationState) => state.cart.cart);
+
+  const isInTheCart = useMemo(() => {
+    const value = isAlreadyInTheCart(product.id);
+
+    return value;
+  }, [cart, isAlreadyInTheCart]);
 
   return (
     <S.ProductContainer>
@@ -22,12 +31,21 @@ const ProductCard: React.FC<ProductProps> = ({ product }) => {
       />
       <S.ProductCategory>{product.category}</S.ProductCategory>
       <S.ProductName>{product.product_name}</S.ProductName>
-      <S.RowBetween>
-        <S.ProductPrice>${product.price}</S.ProductPrice>
-        <S.ProductButton onPress={() => addToCart(product)}>
-          <FeatherIcon size={23} name="plus" color="#C4C4C4" />
-        </S.ProductButton>
-      </S.RowBetween>
+
+      {isInTheCart === true ? (
+        <S.Center>
+          <S.InCartButton>
+            <S.InCartText>Product is already in the cart</S.InCartText>
+          </S.InCartButton>
+        </S.Center>
+      ) : (
+        <S.RowBetween>
+          <S.ProductPrice>${product.price}</S.ProductPrice>
+          <S.ProductButton onPress={() => addToCart(product as any)}>
+            <FeatherIcon size={23} name="plus" color="#C4C4C4" />
+          </S.ProductButton>
+        </S.RowBetween>
+      )}
     </S.ProductContainer>
   );
 };

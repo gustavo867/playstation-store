@@ -8,7 +8,7 @@ export const Container = styled.SafeAreaView`
 `;
 
 export const ProductContainer = styled.View`
-  margin-top: 120px;
+  margin-top: 100px;
   align-items: center;
   justify-content: center;
 `;

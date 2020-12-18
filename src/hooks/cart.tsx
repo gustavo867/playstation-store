@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { Alert } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { ApplicationState } from '../redux';
@@ -61,14 +61,28 @@ function useCart() {
     [cart],
   );
 
+  const isAlreadyInTheCart = useCallback(
+    (id: number) => {
+      const check = cart.find((p) => p.id === id);
+
+      if (check) {
+        return true;
+      } else {
+        return false;
+      }
+    },
+    [cart],
+  );
+
   const values = useMemo(
     () => ({
       addToCart,
       increment,
       decrement,
       cleanCart,
+      isAlreadyInTheCart,
     }),
-    [addToCart, increment, decrement, cleanCart],
+    [addToCart, increment, decrement, cleanCart, isAlreadyInTheCart],
   );
 
   return values;

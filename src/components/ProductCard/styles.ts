@@ -10,7 +10,7 @@ export const ProductContainer = styled.View`
   height: ${height * 0.4}px;
   margin-horizontal: 10px;
   margin-bottom: 20px;
-  border-radius: 20px;
+  border-radius: 12px;
 `;
 
 export const ProductImage = styled.Image`
@@ -47,6 +47,29 @@ export const RowBetween = styled.View`
   margin-top: 8px;
 `;
 
+export const Center = styled.View`
+  align-items: center;
+  justify-content: center;
+  margin-top: 8px;
+`;
+
 export const ProductButton = styled.TouchableOpacity``;
 
 export const ProductPrice = styled.Text``;
+
+export const InCartButton = styled.View`
+  background-color: #e83f5b;
+  align-self: center;
+  width: ${width * 0.38}px;
+  height: ${height * 0.05}px;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  elevation: 5;
+`;
+
+export const InCartText = styled.Text`
+  color: #fff;
+  font-size: 10px;
+  width: ${width * 0.3}px;
+`;

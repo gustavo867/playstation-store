@@ -9,7 +9,7 @@ export const darkTheme = {
 
 export const lightTheme = {
   mode: 'light',
-  primary: '#6F737B',
+  primary: '#EEF2FA',
   text_color: '#000',
   status_bar_color: 'dark-content',
   switch_mode: '#FFF',

@@ -6,7 +6,7 @@ export const Container = styled.View`
   position: absolute;
   height: 54px;
   width: 54px;
-  top: ${StatusBar.currentHeight ? StatusBar.currentHeight + 10 : 50}px;
+  top: ${StatusBar.currentHeight ? StatusBar.currentHeight + 7 : 50}px;
   right: 7px;
 `;
 

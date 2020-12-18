@@ -1,10 +1,10 @@
 import { Dimensions } from 'react-native';
+import Animated from 'react-native-reanimated';
 import styled from 'styled-components/native';
 
 const { width, height } = Dimensions.get('window');
 
 export const Container = styled.View`
-  position: absolute;
   background-color: #4187ff;
   bottom: 0;
   width: ${width}px;
@@ -16,6 +16,8 @@ export const Container = styled.View`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 `;
+
+export const AnimatedButton = styled(Animated.View)``;
 
 export const CartButton = styled.TouchableOpacity`
   align-items: center;
