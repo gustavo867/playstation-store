@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Phillz Coffe</h1>
+<h1>Playstation Store</h1>
 <img src="./.github/screen1.jpg" height="800"></img>
 <img src="./.github/screen2.jpg" height="800"></img>
 </div>
